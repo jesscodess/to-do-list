@@ -44,11 +44,11 @@ function addItem(){
     toDoItems.appendChild(divParent);
 
     input.value = '';
-//
-
 };
 
 function storeItem(){
     let userList = [document.getElementsByClassName('.item')];
     localStorage.setItem('retrieveUserList', JSON.stringify(userList));
 };
+
+storeItem();
