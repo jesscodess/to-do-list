@@ -44,4 +44,6 @@ function addItem(){
     toDoItems.appendChild(divParent);
 
     input.value = '';
-}
+//
+    localStorage.setItem('userList', 'item');
+};
