@@ -45,5 +45,5 @@ function addItem(){
 
     input.value = '';
 //
-    localStorage.setItem('userList', 'item');
+    localStorage.setItem('userList', item);
 };
