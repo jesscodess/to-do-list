@@ -49,6 +49,6 @@ function addItem(){
 };
 
 function storeItem(){
-    let itens = document.getElementsByClassName('.item');
-    localStorage.setItem('userList', itens);
+    let userList = [document.getElementsByClassName('.item')];
+    localStorage.setItem('retrieveUserList', JSON.stringify(userList));
 };
