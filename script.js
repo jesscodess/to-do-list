@@ -45,5 +45,10 @@ function addItem(){
 
     input.value = '';
 //
-    localStorage.setItem('userList', item);
+
+};
+
+function storeItem(){
+    let itens = document.getElementsByClassName('.item');
+    localStorage.setItem('userList', itens);
 };
