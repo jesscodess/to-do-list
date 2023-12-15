@@ -14,7 +14,7 @@ body{
 
 /*alternative gradient: to #E22865, #37ADCD */
 
-.container{
+.container-nav, .container-list{
   width: 1280px;
   margin: auto;
 }
@@ -114,11 +114,11 @@ body{
 }
 
 @media(max-width:1280px){
-  .container{width: 100%;}
+  .container-nav, .container-list{width: 100%;}
 }
 
 @media(max-width:768px){
-  .container{width: 95%;}
+  .container-nav, .container-list{width: 95%;}
   
   .nav{
     padding: 20px;

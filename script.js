@@ -1,14 +1,17 @@
 // Variables
 
-const toDoItems = document.getElementsByClassName('to-do-items')[0];
-const input = document.getElementById('input');
+const list = document.querySelector('.container-list');
+const input = document.getElementById('#input');
 const trashIcon = document.getElementById('trash');
+let itemsArray = localStorage.getItem('items') ?
+JSON.parse(localStorage.getItem('items')) : [];
 
 // Event listeners
 
 input.addEventListener('keydown', function (event){
     if (event.key === 'Enter'){
         addItem();
+        storeItem();
     };
 });
 
@@ -31,6 +34,9 @@ function addItem(){
 //
     divChild.appendChild(checkIcon);
 //
+
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+
     trashIcon.className = 'fas fa-trash';
     trashIcon.style.color = 'darkgray';
     trashIcon.addEventListener('click', function (){
@@ -41,14 +47,15 @@ function addItem(){
 //
     divParent.appendChild(divChild);
 //
-    toDoItems.appendChild(divParent);
+    list.appendChild(divParent);
 
     input.value = '';
 };
 
 function storeItem(){
-    let userList = [document.getElementsByClassName('.item')];
-    localStorage.setItem('retrieveUserList', JSON.stringify(userList));
-};
+    itemsArray.push(input.value);
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    addItem(input.value);
+    input.value = '';
+}
 
-storeItem();
