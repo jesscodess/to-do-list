@@ -1,10 +1,8 @@
 // Variables
 
-const list = document.querySelector('container-list');
+const list = document.getElementsByClassName('container-list');
 const input = document.getElementById('input');
 const trashIcon = document.getElementById('trash');
-let itemsArray = localStorage.getItem('items') ?
-JSON.parse(localStorage.getItem('items')) : [];
 
 // Event listeners
 
@@ -49,14 +47,4 @@ function addItem(){
     list.appendChild(divParent);
 
     input.value = '';
-//
-    storeItem();
 };
-
-function storeItem(){
-    itemsArray.push(input.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-    addItem(input.value);
-    input.value = '';
-}
-
