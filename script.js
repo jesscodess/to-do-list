@@ -11,7 +11,6 @@ JSON.parse(localStorage.getItem('items')) : [];
 input.addEventListener('keydown', function (event){
     if (event.key === 'Enter'){
         addItem();
-        storeItem();
     };
 });
 
@@ -50,6 +49,8 @@ function addItem(){
     list.appendChild(divParent);
 
     input.value = '';
+//
+    storeItem();
 };
 
 function storeItem(){
