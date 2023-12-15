@@ -1,6 +1,6 @@
 // Variables
 
-const list = document.getElementsByClassName('to-do-items');
+const toDoItems = document.getElementsByClassName('to-do-items')[0];
 const input = document.getElementById('input');
 const trashIcon = document.getElementById('trash');
 
@@ -31,9 +31,6 @@ function addItem(){
 //
     divChild.appendChild(checkIcon);
 //
-
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-
     trashIcon.className = 'fas fa-trash';
     trashIcon.style.color = 'darkgray';
     trashIcon.addEventListener('click', function (){
@@ -44,7 +41,7 @@ function addItem(){
 //
     divParent.appendChild(divChild);
 //
-    list.appendChild(divParent);
+    toDoItems.appendChild(divParent);
 
     input.value = '';
 };
