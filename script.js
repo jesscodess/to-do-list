@@ -1,6 +1,6 @@
 // Variables
 
-const list = document.getElementsByClassName('container-list');
+const list = document.getElementsByClassName('.container-list');
 const input = document.getElementById('input');
 const trashIcon = document.getElementById('trash');
 
