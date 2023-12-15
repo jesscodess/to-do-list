@@ -1,7 +1,7 @@
 // Variables
 
 const list = document.querySelector('.container-list');
-const input = document.getElementById('#input');
+const input = document.getElementById('input');
 const trashIcon = document.getElementById('trash');
 let itemsArray = localStorage.getItem('items') ?
 JSON.parse(localStorage.getItem('items')) : [];
